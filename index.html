@@ -25,16 +25,16 @@
 <body>
 
 	<div class="chrome">
-		<input id="myinput" type="range" value="50" min="0" max="100" value="2" />
-		<input id="myinput2" type="range" value="50" min="0" max="100" value="2" />
+		<input id="myinput" type="range" value="50"    />
+		<input id="myinput2" type="range" value="70"   />
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.1.4/js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript"> 
 		$("#myinput").ionRangeSlider({
-			min: 100,
-			max: 1000,
-			from: 1
+			min: 10,
+			max: 280,
+			from: 50
 		});
 
 		$("#myinput2").ionRangeSlider({
@@ -42,7 +42,9 @@
 			max: 1000,
 			from: 1
 		});
-		
+
+		var summ = parseInt($("#myinput").val()) + parseInt($("#myinput2").val());
+		console.log(summ);
 		
 		document.getElementById("myinput").oninput = function() {
 			this.style.background = 'linear-gradient(to right, #82CFD0 0%, #82CFD0 '+this.value +'%, #fff ' + this.value + '%, white 100%)'
